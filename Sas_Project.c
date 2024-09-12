@@ -40,6 +40,7 @@ void AddEtud()
   numberEtud++;
   printf("============================== \n");
 }
+
 void ShowAll()
 {
   printf("=============================================== La liste des Etudients =============================================== \n");
@@ -454,8 +455,10 @@ void Statistiques()
   printf("3 : afficher les etudiants ayant une moyenne generale superieure a un certain seuil.\n");
   printf("4 : afficher les 3 etudiants ayant les meilleures notes.\n");
   printf("5 : afficher le nombre d\'etudiants ayant reussi dans chaque departement.\n");
+
   printf("entrer un choix : ");
   scanf("%d", &choix);
+
   switch (choix)
   {
   case 1:
@@ -472,9 +475,6 @@ void Statistiques()
     break;
   case 5:
     Show_sup_dix_dep();
-    break;
-  case 0:
-    printf("quitter le programme.\n");
     break;
   default:
     printf("entrer un autre  choix.\n");
