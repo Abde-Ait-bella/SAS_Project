@@ -50,7 +50,7 @@ void ShowAll()
     printf(" Id : %d |", etudient[i].id);
     printf(" Nom : %s |", etudient[i].nom);
     printf(" Prenom : %s |", etudient[i].prenom);
-    printf(" Date de Naissance : %s DH |", etudient[i].dateNaissance);
+    printf(" Date de Naissance : %s |", etudient[i].dateNaissance);
     printf(" Departement : %s |", etudient[i].departement);
     printf(" Note generale : %d \n", etudient[i].note_generale);
   }
@@ -175,7 +175,8 @@ void SearchEtud()
 
 void UpdateEtud()
 {
-  int searchId, newNom[25], newPrenom[25], newdateNaissance[25], newDepartement[25], newNotegenerale;
+  int searchId,  newNotegenerale;
+  char newNom[25], newPrenom[25], newdateNaissance[25], newDepartement[25];
   int m;
   printf("Entrez id de etudient pour modifier : ");
   scanf("%d", &searchId);
@@ -202,7 +203,10 @@ void UpdateEtud()
     case 1:
       printf("modifier le nom : ");
       scanf("%s", newNom);
-      if (strlen(newNom) > 0)
+
+      int newNomLength = sizeof(newNom) / sizeof(newNom[0]);
+
+      if (newNomLength > 0)
       {
         strcpy(etudient[i].nom, newNom);
       }
@@ -210,6 +214,7 @@ void UpdateEtud()
     case 2:
       printf("modifier Prenom : ");
       scanf("%s", newPrenom);
+      
       if (strlen(newPrenom) > 0)
       {
         strcpy(etudient[i].prenom, newPrenom);
@@ -218,6 +223,7 @@ void UpdateEtud()
     case 3:
       printf("modifier date de naissance : ");
       scanf("%s", newdateNaissance);
+
       if (strlen(newdateNaissance) > 0)
       {
         strcpy(etudient[i].dateNaissance, newdateNaissance);
